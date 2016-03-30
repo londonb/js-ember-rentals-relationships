@@ -2,7 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(params) {
-    return this.store.findRecord('rental', params.rental_id);
+    return Ember.RSVP.hash({
+      cities: this.store.findAll('city'),
+      rental: this.store.findRecord('rental', params.rental_id)
+    });
   },
   actions: {
     update(rental, params) {
@@ -15,7 +18,10 @@ export default Ember.Route.extend({
       this.transitionTo('index');
     },
     destroyRental(rental) {
-      rental.destroyRecord();
+      var city = rental.get('city');
+      rental.destroyRecord().then(function() {
+        city.save();
+      });
       this.transitionTo('index');
     }
   }

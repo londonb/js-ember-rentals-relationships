@@ -14,7 +14,7 @@ export default Ember.Component.extend({
         title: this.get('title'),
         body: this.get('body')
       };
-      this.set('addNewAnnouncement', false),
+      this.set('addNewAnnouncement', false);
       this.sendAction('save', params);
     }
   }

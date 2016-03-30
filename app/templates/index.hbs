@@ -1,25 +1,28 @@
   <h1> Welcome to Super Rentals </h1>
 
-  We hope you find exactly what you're looking for in a place to stay.
+  <h2 class="lead">We hope you find exactly what you're looking for in a place to stay.</h2>
+<div class="row">
+  <div class="col-md-6">
+    <h2> Available Rentals </h2>
 
-  <h2> Available Rentals </h2>
+    <ul>
+      {{#each model.rentals as |rental|}}
+      {{rental-tile rental=rental}}
+      {{/each}}
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <h2> Cities </h2>
 
-  <ul>
-    {{#each model.rentals as |rental|}}
-    {{rental-tile rental=rental}}
-    {{/each}}
-  </ul>
+    <ul>
+      {{#each model.cities as |city|}}
+        <li>{{#link-to 'city' city.id}}{{city.name}}{{/link-to}}</li>
+      {{/each}}
+    </ul>
 
+    {{new-city saveAddCity="addCity"}}
 
+  </div>
+</div>
 
-<h2> Cities </h2>
-
-<ul>
-  {{#each model.cities as |city|}}
-    <li>{{#link-to 'city' city.id}}{{city.name}}{{/link-to}}</li>
-  {{/each}}
-</ul>
-
-{{new-city saveAddCity="addCity"}}
-
-    <hr>
+<hr>

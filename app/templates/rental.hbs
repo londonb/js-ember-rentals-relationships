@@ -1,5 +1,5 @@
-<h2>More information about {{model.owner}}'s {{model.type}}</h2>
+<h2>More information about {{model.rental.owner}}'s {{model.rental.type}}</h2>
 
-{{rental-detail rental=model destroyRental="destroyRental"}}
+{{rental-detail rental=model.rental destroyRental="destroyRental"}}
 
-{{update-rental rental=model update="update"}}
+{{update-rental rental=model.rental cities=model.cities update="update"}}
