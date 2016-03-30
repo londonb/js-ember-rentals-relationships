@@ -1,0 +1,10 @@
+<h3>{{city.name}} is located in {{city.country}}</h3>
+
+<hr>
+
+<p>Rentals available in {{city.name}}:</p>
+<ul>
+  {{#each city.rentals as |rental|}}
+    {{rental-tile rental=rental}}
+  {{/each}}
+</ul>
