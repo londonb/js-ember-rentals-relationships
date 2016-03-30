@@ -5,6 +5,15 @@ export default Ember.Component.extend({
   actions: {
     cityFormShow() {
       this.set('addNewCity', true);
+    },
+
+    saveCity(){
+      var params = {
+        name: this.get('name'),
+        country: this.get('country')
+      };
+      this.set('addNewCity', false);
+      this.sendAction('saveAddCity', params);
     }
   }
 });

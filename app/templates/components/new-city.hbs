@@ -6,8 +6,13 @@
           <label for="name">Name of City</label>
           {{input class="form-control" value=name id="name"}}
         </div>
+        <div class="form-group">
+          <label for="country">Country</label>
+          {{input class="form-control" value=country id="country"}}
+        </div>
+        <button class="btn btn-success" {{action 'saveCity'}}>Add New City</button>
       </form>
     </div>
   {{else}}
-    <button {{action 'cityFormShow'}}>New City</button>
+    <button {{action 'cityFormShow'}} class="btn btn-primary">New City</button>
   {{/if}}
