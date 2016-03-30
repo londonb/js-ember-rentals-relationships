@@ -22,5 +22,12 @@
     "date": "03-28-2016",
     "title": "Check it out!",
     "body": "New homes on the market!"
-    }]
+  }],
+  "cities": [{
+    "name": "Portland",
+    "country": "USA"
+  }, {
+    "name": "Seattle",
+    "country": "USA"
+  }]
 }

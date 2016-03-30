@@ -4,8 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'super-rentals',
     environment: environment,
-    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
-    firebase: 'https://super-rentals-ab-bl.firebaseio.com/',
+    firebase: 'https://super-rentalsbrad.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -21,7 +20,7 @@ module.exports = function(environment) {
     },
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' 'unsafe-eval' https://*.firebaseio.com",
+      'script-src': "'self' 'unsafe-eval' https://*.firebaseio.com wss://*.firebaseio.com",
       'font-src': "'self'",
       'connect-src': "'self' wss://*.firebaseio.com",
       'img-src': "'self' *",
